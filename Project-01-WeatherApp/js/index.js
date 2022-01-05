@@ -34,7 +34,6 @@ function findWeather(e) {
         .catch (err => {
             console.log(err)
         })
-    
 }
 
 function clickSearch(e) {
