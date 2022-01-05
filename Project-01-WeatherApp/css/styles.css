@@ -106,6 +106,7 @@ input {
 
 .current-temp-icon {
     text-align: center;
+    margin-left: .5rem;
 }
 
 .current-temp-container-extra {
@@ -123,6 +124,34 @@ input {
 }
 label {
     cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 .50rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: .75rem .50rem;
+    width: 250px;
+    height: 175px;
+    border: 1px solid blue;
+}
+
+.cards img {
+    width: fit-content;
+    height: fit-content;
+    margin: auto 0;
+}
+
+h2 {
+    text-align: center;
 }
 
 @media (max-width: 800px) {
@@ -151,6 +180,9 @@ label {
         flex-direction: column;
         justify-content: center;
         text-align: center;
+    }
+    .current-temp-icon {
+        margin-left: 0;
     }
 }
 
