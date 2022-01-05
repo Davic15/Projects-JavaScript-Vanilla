@@ -91,19 +91,23 @@ function displayDataCurrentWeather(data) {
 function clickSearch(e) {
     if(e.key == "Enter") {
         findWeather(e)
-        divCard.innerHTML = ""
-        checkEl.checked = false;
-        textEl.value = ""
+        clearControls();
     }
 }
 
 function getLocation() {
-    textEl.value = "";
+    clearControls();
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(success);
     } else {
         console.log("Geolocation is not supported by your browser");
     }
+}
+
+function clearControls() {
+    divCard.innerHTML = ""
+    checkEl.checked = false;
+    textEl.value = ""
 }
 
 function success(position) {
