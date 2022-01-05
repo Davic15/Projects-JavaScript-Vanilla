@@ -37,6 +37,7 @@ h1 {
     margin: 0;
     padding: 1rem;
     text-align: center;
+    border-bottom: 1px solid steelblue;
 }
 
 .container {
@@ -50,6 +51,8 @@ h1 {
 .information-container {
     margin: 0;
     padding: 0;
+    border-bottom: 1px solid steelblue;
+
 }
 
 p {
@@ -60,6 +63,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-bottom: 1px solid steelblue;
 }
 
 .option-container {
@@ -122,6 +126,7 @@ input {
   border-width: 3px;
   cursor: pointer;
 }
+
 label {
     cursor: pointer;
 }
@@ -140,8 +145,10 @@ label {
     text-align: center;
     margin: .75rem .50rem;
     width: 250px;
-    height: 175px;
+    height: 205px;
     border: 1px solid blue;
+    background-color: steelblue;
+    border-radius: 15px;
 }
 
 .cards img {
@@ -152,6 +159,10 @@ label {
 
 h2 {
     text-align: center;
+}
+
+.day, .temp-day {
+    margin-top: 1rem;
 }
 
 @media (max-width: 800px) {

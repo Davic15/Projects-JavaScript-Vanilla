@@ -111,3 +111,13 @@ function success(position) {
     lon = position.coords.longitude;
     findWeather();
 }
+
+function defaultLocation() {
+    if (!lon && !lat) {
+        lon = "-80.7333"
+        lat = "-0.95"
+        findWeather();
+    }
+}
+
+defaultLocation()
