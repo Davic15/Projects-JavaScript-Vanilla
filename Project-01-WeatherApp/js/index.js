@@ -83,7 +83,7 @@ function displayDataCurrentWeather(data) {
     document.getElementById("current-temp").textContent = Math.floor(data.main.temp) + "°C";
     document.getElementById("min-temp").textContent = "Min temperature: " + Math.floor(data.main.temp_min) + "°C";
     document.getElementById("max-temp").textContent = "Max temperature: " + Math.floor(data.main.temp_max) + "°C";
-    document.getElementById("current-icon").src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    document.getElementById("current-icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     document.getElementById("current-icon").alt = data.weather[0].description;
     document.getElementById("current-temp-description").textContent = data.weather[0].description;
 }
