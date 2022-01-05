@@ -59,7 +59,7 @@ function fetchDailyWeather(url) {
 function displayDataDailyWeather (data) {
     for (const element of data.daily) {
         let date = new Date(element.dt * 1000);
-        let url = `http://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`
+        let url = `https://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`
         divCard.innerHTML += `
             <div class="card">
                 <div class="header">
