@@ -4,15 +4,14 @@
 
 /* Variable definition */
 :root {
-    --ff-primary: 'Lemonada', sans-serif;
-    --ff-secondary: 'Montserrat', sans-serif;
+    --ff-primary: 'Montserrat', sans-serif;
     
     --fw-reg: 400;
     --fw-bold: 900;
     
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent: #16e0bd;
+    --clr-accent: #83e0d1;
     
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -29,7 +28,93 @@
     }
 }
 
+body {
+    margin: 0;
+    font-size: var(--fs-body);
+    font-family: var(--ff-primary);
+    color: var(--clr-dark);
+}
+
 h1 {
     font-family: var(--ff-secondary);
-    font-size: 2.5rem;
+    font-size:var(--fs-h1);
+    color: var(--clr-dark);
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    margin: 25px auto;
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+    border-radius: 10px;
+}
+
+.todo-item {
+    display: block;
+    margin: 1.5rem auto;
+    width: 75%;
+    height: 2rem;
+    border-radius: 10px;
+    border: 1px solid #D9AFD9;
+}
+
+.add-item {
+    display: block;
+    margin: 1.5rem auto;
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    background-color: #97D9E1;
+    border: 1px solid #97D9E1;
+    font-size: var(--fs-h3);
+}
+
+.add-item:hover, .add-item:focus {
+    background-color: #D9AFD9;
+    font-weight: 700;
+}
+
+.list-item {
+    list-style-type: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 480px;
+        height: auto;
+    }
+}
+  
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .container {
+        width: 600px;
+        height: auto;
+    }
+}
+  
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+        height: auto;
+    }
+} 
+  
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container {
+        width: 992px;
+        height: auto;
+    }
+} 
+  
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 1200px;
+        height: auto;
+    }
 }

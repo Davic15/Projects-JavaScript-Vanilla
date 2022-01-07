@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./css/styles.css">
         <title>To-do list habits tracker</title>
     </head>
@@ -12,10 +12,15 @@
 
         <div class="container">
             <h1>To-do list & habits tracker</h1>
+            <div class="container-controls">
+                <input type="text" id="todo-item" class="todo-item" placeholder="Type a task to do">
+                <button id="add-item" class="add-item">Add task</button>
+            </div>
             <ul>
-                <li>hola</li>
-                <li>bye</li>
+                <li class="list-item">hola</li>
+                <li class="list-item">bye</li>
             </ul>
+
         </div>
         <script src="js/index.js"></script>
     </body>
