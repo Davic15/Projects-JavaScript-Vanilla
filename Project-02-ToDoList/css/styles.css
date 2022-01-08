@@ -59,25 +59,72 @@ h1 {
     border: 1px solid #D9AFD9;
 }
 
+.todo-item:hover, .todo-item:focus {
+    border: 1px solid #97D9E1;
+}
+
 .add-item {
     display: block;
     margin: 1.5rem auto;
     width: 10rem;
-    height: 2.5rem;
+    height: 2rem;
     border-radius: 10px;
     background-color: #97D9E1;
     border: 1px solid #97D9E1;
+    transition: all 1s ease;
+    transform: scale(1);
     font-size: var(--fs-h3);
 }
 
-.add-item:hover, .add-item:focus {
+.add-item:active {
+    transform: translate(0px, 5px);
+}
+
+.add-item:hover {
     background-color: #D9AFD9;
+    transform: scale(1.5) perspective(1px);
     font-weight: 700;
 }
 
 .list-item {
     list-style-type: none;
+    margin: .75rem;
+    width: auto;
 }
+
+.list-eleemnts {
+    margin: 0;
+}
+
+.btn {
+    margin: .5rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+
+.btn-complete {
+    background-color: #BAFFB4;
+    transition: all 1s ease;
+    transform: scale(1);
+    color: green;
+}
+
+.btn-complete:hover {
+    transform: scale(1.5) perspective(1px);
+}
+
+.btn-cancel {
+    background-color: #FF6363;
+    transition: all 1s ease;
+    transform: scale(1);
+    color: purple;
+}
+
+.btn-cancel:hover {
+    transform: scale(1.5) perspective(1px);
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
