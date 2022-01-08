@@ -2,17 +2,14 @@ const btnAddEl = document.getElementById("add-item");
 const txtAddEl = document.getElementById("todo-item");
 const ulElements = document.getElementById("list-elements");
 const btnCompleteEl = document.getElementsByClassName("btn-complete");
+const btnCancelEl = document.getElementsByClassName("btn-cancel");
 const liElement = document.getElementsByClassName("list-item");
+
+let c = 0;
 
 btnAddEl.addEventListener("click", addElementList);
 
-function deleteElementList() {
-    for (let element of liElement) {
-        element.addEventListener("click", function() {
-            element.parentNode.removeChild(element)
-        })
-    }
-}
+
 
 function addElementList() {
     if (txtAddEl.value) {
@@ -23,6 +20,19 @@ function addElementList() {
                 ${txtAddEl.value}
             </li>
         `;
+        c++;
     }
-    deleteElementList();
+    console.log(btnCompleteEl)
+    for (let element of btnCompleteEl) {
+        element.addEventListener("click", function (e) {
+            console.log(e.target)
+            
+        })
+    }
+    for (let element of btnCancelEl) {
+        element.addEventListener("click", function (e) {
+            console.log(this.parentNode.remove())
+        })
+    }
+    
 }
