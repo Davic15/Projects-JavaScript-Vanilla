@@ -84,6 +84,29 @@ h1 {
     font-weight: 700;
 }
 
+.delete-all-items {
+    display: block;
+    margin: 1.5rem auto;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: #97D9E1;
+    border: 1px solid #97D9E1;
+    transition: all 1s ease;
+    transform: scale(1);
+    font-size: var(--fs-h3);
+}
+
+.delete-all-items:active {
+    transform: translate(0px, 5px);
+}
+
+.delete-all-items:hover {
+    background-color: #D9AFD9;
+    transform: scale(1.5) perspective(1px);
+    font-weight: 700;
+}
+
 .list-item {
     list-style-type: none;
     margin: .75rem;
@@ -153,6 +176,11 @@ h2 {
     margin-bottom: 1rem;
 }
 
+.container-button {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
 
 
 /* Extra small devices (phones, 600px and down) */
