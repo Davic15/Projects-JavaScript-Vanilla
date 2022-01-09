@@ -29,14 +29,12 @@ function addElementList() {
                 ${txtAddEl.value}
             </li>
         `;
-        console.log(ulElements)
         valuesToSave = {
             id_entry: token,
             value: txtAddEl.value
         }
         array.push(valuesToSave)
         localStorage.setItem("todo", JSON.stringify(array));
-        valuesToSave = {}
     }
     eventDisplayedButtons();
 }
@@ -54,9 +52,8 @@ function eventDisplayedButtons() {
             this.parentNode.remove();
             cancelCounter++;
             document.getElementById("task-cancel-span").innerHTML += ` ${cancelCounter}: <i class="fas fa-times fa-times-custom"></i>`;
-            //console.log(this.parentNode.dataset.token)
-            //console.log(array)
-            console.log(array.splice(array.indexOf(this.parentNode.dataset.token), 1))
+            array = array.filter(id => id.id_entry != this.parentNode.dataset.token)
+            localStorage.setItem("todo", JSON.stringify(array));
         })
     }
 }
