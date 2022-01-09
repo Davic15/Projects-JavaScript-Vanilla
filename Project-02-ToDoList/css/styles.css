@@ -1,6 +1,3 @@
-* {
-    border: 1px solid red;
-}
 
 /* Variable definition */
 :root {
@@ -41,6 +38,7 @@ h1 {
     color: var(--clr-dark);
     text-align: center;
     margin: 0;
+    padding: 2rem;
 }
 
 .container {
@@ -128,6 +126,7 @@ h1 {
 .task-done, .task-cancel {
     margin: .25rem 2rem;
     font-weight: 700;
+    margin-bottom: .75rem;
 }
 
 span {
@@ -150,7 +149,11 @@ h2 {
 .fa-times-custom {
     color: maroon;
     font-size: var(--fs-h3);
+    margin: .25rem;
+    margin-bottom: 1rem;
 }
+
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

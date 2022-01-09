@@ -13,7 +13,15 @@ let array = [];
 let token = 0;
 
 btnAddEl.addEventListener("click", addElementList);
+txtAddEl.addEventListener("keyup", detectEnter);
 //localStorage.clear()
+
+function detectEnter(e) {
+    if (e.key == "Enter") {
+        addElementList();
+        txtAddEl.value = "";
+    }
+}
 
 function createToken() {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
@@ -45,6 +53,8 @@ function eventDisplayedButtons() {
             this.parentNode.remove();
             doneCounter++;
             document.getElementById("task-done-span").innerHTML += ` ${doneCounter}: <i class="fas fa-check fa-check-custom"></i>`
+            array = array.filter(id => id.id_entry != this.parentNode.dataset.token)
+            localStorage.setItem("todo", JSON.stringify(array));
         })
     }
     for (let element of btnCancelEl) {
