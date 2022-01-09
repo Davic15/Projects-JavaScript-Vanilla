@@ -125,6 +125,32 @@ h1 {
     transform: scale(1.5) perspective(1px);
 }
 
+.task-done, .task-cancel {
+    margin: .25rem 2rem;
+    font-weight: 700;
+}
+
+span {
+    display: block;
+    margin: 0 2rem;
+    font-size: var(--fs-h3);
+}
+
+h2 {
+    font-size: var(--fs-h3);
+    text-align: center;
+}
+
+.fa-check-custom {
+    color: green;
+    font-size: var(--fs-h3);
+    margin: .25rem;
+}
+
+.fa-times-custom {
+    color: maroon;
+    font-size: var(--fs-h3);
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
