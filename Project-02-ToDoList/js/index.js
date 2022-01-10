@@ -144,6 +144,7 @@ function checkLocalStorage() {
 }
 
 
+/* draw some statistical graphs */
 function graphHabits() {
     refreshGraph();
     let ctx = document.getElementById('my-chart').getContext("2d");
@@ -175,6 +176,7 @@ function graphHabits() {
     });
 }
 
+/* Clear the canvas and refresh the statistical graph */
 function refreshGraph() {
     let chartStatus = Chart.getChart("my-chart");
     if (chartStatus != undefined) {
