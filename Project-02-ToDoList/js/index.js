@@ -8,11 +8,14 @@ const btnDeleteEl = document.getElementById("delete-all-items");
 const loadFromLocalStorage = JSON.parse(localStorage.getItem("todo"));
 const loadFromLocalStoragePreviousIcons = JSON.parse(localStorage.getItem("todo-icon"));
 
+
 let valuesToSave = {};
 let valuesToSaveIcons = {};
 let array = [];
 let arrayIcons = [];
 let token = 0;
+let counterDone = 0;
+let counterCancel = 0;
 
 btnAddEl.addEventListener("click", addElementList);
 txtAddEl.addEventListener("keyup", detectEnter);
@@ -25,6 +28,9 @@ function deleteAllLocalStorage() {
     ulElements.innerHTML = "";
     document.getElementById("task-done-span").textContent += "";
     document.getElementById("task-cancel-span").textContent += "";
+    counterCancel = 0;
+    counterDone = 0;
+    refreshGraph();
 
 }
 
@@ -84,6 +90,8 @@ function eventDisplayedButtons() {
             arrayIcons.push(valuesToSaveIcons)
             console.log(arrayIcons)
             localStorage.setItem("todo-icon", JSON.stringify(arrayIcons));
+            counterDone++;
+            graphHabits();
         })
     }
     for (let element of btnCancelEl) {
@@ -98,6 +106,8 @@ function eventDisplayedButtons() {
             }
             arrayIcons.push(valuesToSaveIcons)
             localStorage.setItem("todo-icon", JSON.stringify(arrayIcons));
+            counterCancel++;
+            graphHabits();
         })
     }
 }
@@ -123,10 +133,52 @@ function checkLocalStorage() {
         for(let i = 0; i < arrayIcons.length; i++) {
             if (arrayIcons[i].status ){
                 document.getElementById("task-done-span").innerHTML += `<i class="fas fa-check fa-check-custom"></i>`
+                counterDone++;
             } else {
                 document.getElementById("task-cancel-span").innerHTML += `<i class="fas fa-times fa-times-custom"></i>`;
+                counterCancel++;
             }
         }
+    }
+    graphHabits();
+}
+
+
+function graphHabits() {
+    refreshGraph();
+    let ctx = document.getElementById('my-chart').getContext("2d");
+    let myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Tasks Done', 'Tasks Cancel'],
+            datasets: [{
+                label: '# of tasks',
+                data: [counterDone, counterCancel],
+                backgroundColor: [
+                    'rgb(220, 249, 244)',
+                    'rgba(255, 99, 71, 0.2)'
+                ],
+                borderColor: [
+                    'rgb(50, 205, 50)',
+                    'rgba(255, 99, 71, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+function refreshGraph() {
+    let chartStatus = Chart.getChart("my-chart");
+    if (chartStatus != undefined) {
+        chartStatus.destroy();
     }
 }
 

@@ -1,4 +1,3 @@
-
 /* Variable definition */
 :root {
     --ff-primary: 'Montserrat', sans-serif;
@@ -182,6 +181,12 @@ h2 {
     justify-content:space-around;
 }
 
+.container-chart {
+    position: relative;
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
