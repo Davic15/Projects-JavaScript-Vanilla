@@ -88,7 +88,6 @@ function eventDisplayedButtons() {
                 status: true
             }
             arrayIcons.push(valuesToSaveIcons)
-            console.log(arrayIcons)
             localStorage.setItem("todo-icon", JSON.stringify(arrayIcons));
             counterDone++;
             graphHabits();
