@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
         <title>My Fake Store</title>
     </head>
     <body>
-        <h1>Hola Mundo</h1>
-        <form>
-            <input id="username" class="username" type="text" placeholder="Username">
-            <input id="password" class="password" type="password" placeholder="*****">
-        </form>
+        <nav></nav>
+        <h1>Welcome to My Fake Store</h1>
+        <div class="container-main">
+            <div class="container-form">
+                <div class="container-form-image">
+                    <img src="img/product-hunt-bro.png" alt="product hunt">
+                </div>
+                <div class="container-form-form">
+                    <h2>Login</h2>
+                    <form>
+                        <input id="username" class="username" type="text" placeholder="Username"><br />
+                        <input id="password" class="password" type="password" placeholder="Password"><br />
+                        <button id="btn-login" class="btn btn-login">Login</button>
+                    </form>
+                </div>  
+            </div>
+        </div>
+        <footer>
+            
+            <address>
+                <p>Address: Via Ormea 85</p>
+                <p>Cellphone: +39 1112577654</p>
+                <p>Email: <a href="mailto:fake@shop.com">Customer Service</a></p>
+            </address>
+        </footer>
         <script src="js/index.js"></script>
     </body>
 </html>
