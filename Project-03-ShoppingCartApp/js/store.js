@@ -1,6 +1,7 @@
 const userData = JSON.parse(localStorage.getItem("fake"));
 const userSpanEl = document.getElementById("user");
-const divEl = document.getElementById("main")
+const divEl = document.getElementById("main");
+const spanEl = document.getElementById("cart-element")
 let arrayProducts = [];
 
 userSpanEl.textContent = userData.name.firstname.toUpperCase() + " " + userData.name.lastname.toUpperCase()
@@ -9,16 +10,21 @@ async function getProducts()  {
     const res = await fetch("https://fakestoreapi.com/products")
     const data = await res.json();
     arrayProducts = data;
-    return arrayProducts
+}
+
+async function getCart() {
+    const res = await fetch("https://fakestoreapi.com/carts/user/1");
+    const data = await res.json();
+    spanEl.textContent = data[0].products.length;
 }
 
 function loadData() {
     getProducts();
     setTimeout(loadProducts, 1000)
+    setTimeout(getCart, 1000)
 }
 
 function loadProducts() {
-    console.log(arrayProducts)
     for (let element of arrayProducts) {
         divEl.innerHTML += `
         <div class="card">
@@ -32,7 +38,6 @@ function loadProducts() {
             </div>
         </div>
         `;
-        console.log(element.description)
     }
 }
 
