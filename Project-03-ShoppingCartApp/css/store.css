@@ -1,4 +1,5 @@
 
+
 html {
     margin: 0;
 }
@@ -17,44 +18,55 @@ h1 {
     font-size: 4rem;
 }
 
-.container-form {
+nav {
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    justify-content: right;
+}
+.cart-element {
+    display: inline;
+    margin: 0;
+    font-size: 1.5rem;
 }
 
+.cart {
+    max-width: 25px;
+    max-height: 25px;
+    margin: 0;
+}
 
-img {
-    margin: 0 auto;
-    max-width: 550px;
+.main {
+    margin: 2rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.card {
+    max-width: 250px;
     max-height: 550px;
-}
-
-input {
-    margin: .5rem auto;
-    min-width: 350px;
-    padding: 15px;
+    border: 1px solid rgb(32, 54, 49);
+    margin: 2rem;
+    padding: .5rem;
     border-radius: 50px;
 }
 
-.btn {
-    width: 300px;
-    border-radius: 50px;
-    padding: 15px 30px;
-    display: block;
-    margin: .5rem auto;
-    background-color: rgb(173,252,234);
+.card-img {
+    max-width: 100px;
+    max-height: 150px;
+    object-fit: contain;
+
 }
 
-.btn:hover, .btn:focus {
-    background-color: rgb(192,229,246);
+.card-header {
+    max-width: 150px;
+    max-height: 150px;
+    text-align: center;
+    margin: 0 auto;
 }
+
+
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
