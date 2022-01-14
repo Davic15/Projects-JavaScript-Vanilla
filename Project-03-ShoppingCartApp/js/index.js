@@ -9,12 +9,17 @@ let myRequest = "store.html";
 let postData = {};
 
 btnLoginEl.addEventListener("click", loginSite);
-/*txtUsernameEl.addEventListener("keydown", focusPassword);
-txtPasswordEl.addEventListener("keydown", focusButton);*/
+//txtUsernameEl.addEventListener("keydown", focusPassword);
+//txtPasswordEl.addEventListener("keydown", focusButton);
 
 function loginSite() {
     if (checkCredentials() && checkValues()) {
-        fetchLogin();
+        let data = fetchLogin();
+        if (data) {
+            window.location.href = myRequest;
+        }
+    } else {
+        clearValues()
     }
 }
 
@@ -37,13 +42,18 @@ function checkValues() {
         flag = false;
     } else {
         txtStatusEl.textContent = "Loading..."
-        flat = true;
+        flag = true;
     }
     return flag;
 }
 
+function clearValues() {
+    txtUsernameEl.value = "";
+    txtPasswordEl.value = "";
+}
+
 async function fetchLogin() {
-    let info = {
+    postData = {
         method:'POST',
         mode: 'cors', 
         'content-type': 'application/json', 
@@ -56,19 +66,18 @@ async function fetchLogin() {
             password: '83r5^_'
         })
     }
-    let res = await fetch(`${API_URL}/auth/login`, info)
+    let res = await fetch(`${API_URL}/auth/login`, postData)
     if (!res.ok) {
         throw Error(`HTTP error! status: ${res.status}`);
     }
     let data = await res.json();
-    console.log(data);
+    console.log(data.token);
     return data;
 }
 
 async function getUser()  {
     const res = await fetch("https://fakestoreapi.com/users/2")
     const data = await res.json();
-    console.log(data)
     localStorage.setItem("fake", JSON.stringify(data))
     return data
 }
