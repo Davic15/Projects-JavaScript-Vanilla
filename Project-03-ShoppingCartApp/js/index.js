@@ -2,165 +2,75 @@ const btnLoginEl = document.getElementById("btn-login");
 const txtUsernameEl = document.getElementById("username");
 const txtPasswordEl = document.getElementById("password");
 const txtStatusEl = document.getElementById("message");
+const API_URL = "https://fakestoreapi.com"
 let userData = {};
 let userToken = 0;
 let myRequest = "store.html";
 let postData = {};
 
-
 btnLoginEl.addEventListener("click", loginSite);
-txtUsernameEl.addEventListener("keydown", focusPassword);
-txtPasswordEl.addEventListener("keydown", focusButton);
-
-/*
-    
-*/
+/*txtUsernameEl.addEventListener("keydown", focusPassword);
+txtPasswordEl.addEventListener("keydown", focusButton);*/
 
 function loginSite() {
-    if (checkInput()) {
-        sendRequest();
-        userData = JSON.parse(localStorage.getItem("fake-store"));
+    if (checkCredentials() && checkValues()) {
         fetchLogin();
     }
 }
 
-function checkInput() {
-    let flag = false;
-    if (!txtUsernameEl.value || !txtPasswordEl.value){
-        clearFields();
-        flag = false;
-    } else {
-        txtStatusEl.textContent = "";
-        flag = true;
-    }
-    return flag;
-}
-
-function clearFields() {
-    txtStatusEl.textContent = "Type your Credentials before click login";
-    txtUsernameEl.value = "";
-    txtPasswordEl.value = "";
-}
-
 function checkCredentials() {
     let flag = false;
-    if ((userData.username === txtUsernameEl.value) && (userData.password === txtPasswordEl.value)) {
-        flag = true;
-    } else {
-        clearFields();
+    if(!txtUsernameEl.value || !txtPasswordEl.value) {
+        txtStatusEl.textContent = "Type your credentials"
         flag = false;
+    } else {
+        txtStatusEl.textContent = "Loading..."
+        flag = true;
     }
     return flag;
 }
 
-const fetchLogin = async () => {
-    /*if (checkCredentials()) {
-        postData = {
-            method:'POST',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body:JSON.stringify({
-                username: "johnd",
-                password: "m38rmF$"
-                })
-            }
-        
+function checkValues() {
+    let flag = false;
+    if(txtUsernameEl.value != "mor_2314" && txtPasswordEl.value != "83r5^_") {
+        txtStatusEl.textContent = "Username and/or Password are not correct";
+        flag = false;
+    } else {
+        txtStatusEl.textContent = "Loading..."
+        flat = true;
+    }
+    return flag;
+}
 
-        
-    }*/
-    postData = {
+async function fetchLogin() {
+    let info = {
         method:'POST',
-        mode: 'cors',
+        mode: 'cors', 
+        'content-type': 'application/json', 
+        accept: 'application/json',
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: {
-            username: "johnd",
-            password: "m38rmF$"
-            }
-        }
-    try {
-        console.log("aa")
-        const res = await axios.post(`https://fakestoreapi.com/auth/login`, {postData});
-        console.log(res);
-            /*userToken = data.token;
-            console.log(userToken)*/
-            //window.location.href = myRequest;
+        body:JSON.stringify({
+            username: 'mor_2314',
+            password: '83r5^_'
+        })
     }
-    catch (err) {
-        console.error(err)
+    let res = await fetch(`${API_URL}/auth/login`, info)
+    if (!res.ok) {
+        throw Error(`HTTP error! status: ${res.status}`);
     }
-
+    let data = await res.json();
+    console.log(data);
+    return data;
 }
 
-//function fetchLogin() {
-   /* if (checkCredentials()) {
-        console.log("entre")
-        const response = await fetch('https://fakestoreapi.com/auth/login',{
-            method:'POST',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body:JSON.stringify({
-                username: "johnd",
-                password: "m38rmF$"
-                })
-            })
-            
-        const data = await response.json();
-        console.log(data)*/
-/*
-        .then(res => {
-            if(!res.ok) {
-                throw Error ("Error in the server");
-            } else {
-                return res.json();
-            }
-        })
-        .then(data => {
-            if (data) {
-                userToken = data.token;
-                console.log(userToken)
-                //window.location.href = myRequest;
-            } else {
-                console.log("error");
-            }
-            console.log(data);
-        })
-        .catch(err => {
-            console.log(err);
-        })
-    }*/
-    
-//}
-
-
-const sendRequest = async () => {
-    try {
-        const res = await axios.get(`https://fakestoreapi.com/users/1`, {
-            onDownloadProgress: function (progressEvent) {
-                progressEvent.loaded ? txtStatusEl.textContent = "Done, redirecting" : txtStatusEl.textContent = "Trying to log in";
-            }
-        })
-        localStorage.setItem("fake-store", JSON.stringify(res.data)); 
-    } 
-    catch (err) {
-        console.error(err);
-    }
+async function getUser()  {
+    const res = await fetch("https://fakestoreapi.com/users/2")
+    const data = await res.json();
+    console.log(data)
+    localStorage.setItem("fake", JSON.stringify(data))
+    return data
 }
 
-function focusButton(e) {
-    if (e.key == "Enter") {
-        btnLoginEl.focus();
-    }
-}
-
-function focusPassword(e) {
-    if (e.key == "Enter") {
-        txtPasswordEl.focus();
-    }
-}
+getUser()
