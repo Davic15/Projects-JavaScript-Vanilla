@@ -71,7 +71,6 @@ async function fetchLogin() {
         throw Error(`HTTP error! status: ${res.status}`);
     }
     let data = await res.json();
-    console.log(data.token);
     return data;
 }
 
@@ -79,7 +78,6 @@ async function getUser()  {
     const res = await fetch("https://fakestoreapi.com/users/2")
     const data = await res.json();
     localStorage.setItem("fake", JSON.stringify(data))
-    return data
 }
 
 getUser()

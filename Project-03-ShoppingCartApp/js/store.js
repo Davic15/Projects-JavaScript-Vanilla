@@ -3,6 +3,7 @@ const userSpanEl = document.getElementById("user");
 const divEl = document.getElementById("main");
 const spanEl = document.getElementById("cart-element")
 let arrayProducts = [];
+console.log(userData)
 
 userSpanEl.textContent = userData.name.firstname.toUpperCase() + " " + userData.name.lastname.toUpperCase()
 
@@ -10,12 +11,14 @@ async function getProducts()  {
     const res = await fetch("https://fakestoreapi.com/products")
     const data = await res.json();
     arrayProducts = data;
+    localStorage.setItem("fake-products", JSON.stringify(data))
 }
 
 async function getCart() {
     const res = await fetch("https://fakestoreapi.com/carts/user/1");
     const data = await res.json();
     spanEl.textContent = data[0].products.length;
+    localStorage.setItem("fake-cart", JSON.stringify(data))
 }
 
 function loadData() {
