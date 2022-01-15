@@ -21,7 +21,7 @@ async function getCart() {
 }
 
 function loadData() {
-    setTimeout(getProducts, 100);
+    getProducts();
     setTimeout(loadProducts, 1000)
     setTimeout(getCart, 1000)
 }
