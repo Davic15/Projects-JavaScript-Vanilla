@@ -3,7 +3,6 @@ const userSpanEl = document.getElementById("user");
 const divEl = document.getElementById("main");
 const spanEl = document.getElementById("cart-element")
 let arrayProducts = [];
-console.log(userData)
 
 userSpanEl.textContent = userData.name.firstname.toUpperCase() + " " + userData.name.lastname.toUpperCase()
 

@@ -56,3 +56,23 @@ img {
 .btn:hover, .btn:focus {
     background-color: rgb(192,229,246);
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .image {
+        margin-left: 5rem;
+        margin-top: 3rem;
+        margin-right: 5rem;
+    }
+}
+  
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .image {
+        margin-left: 5rem;
+        margin-top: 3rem;
+        margin-right: 5rem;
+    }
+}
+  
