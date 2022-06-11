@@ -83,20 +83,18 @@ body {
 }
 
 .stars {
-    background: #000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+    background: #000 url('../img/stars.png') repeat top center;
     z-index: -103;
 }
 
 .twinkling {
-    background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+    background: transparent url('../img/twinkling.png') repeat top center;
     z-index: -102;
-
     animation: move-twink-back 200s linear infinite;
 }
 
 .clouds {
     background: transparent url('../img/v3xI5rv.png') repeat top center;
     z-index: -100;
-
     animation: move-clouds-back 600s linear infinite;
 }
