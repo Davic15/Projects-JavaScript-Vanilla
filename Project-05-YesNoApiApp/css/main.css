@@ -96,6 +96,7 @@ body {
     position: absolute;
     color: white;
     margin: 0.3rem 0.8rem;
+    font-size: 0.90rem;
 }
 
 @media (max-width: 500px) {
