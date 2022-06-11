@@ -95,7 +95,7 @@ body {
 }
 
 .clouds {
-    background: transparent url(https://i.imgur.com/v3xI5rv.png) repeat top center;
+    background: transparent url('../img/v3xI5rv.png') repeat top center;
     z-index: -100;
 
     animation: move-clouds-back 600s linear infinite;
