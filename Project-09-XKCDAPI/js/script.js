@@ -43,7 +43,6 @@
                 this.DomInterface.showError();
             }
             const data = response.body;
-
             this.DomInterface.showComics(data);
             this.setCurrentComicsNumber(data.num);
             this.setMaxComicsNumber(data.num);
