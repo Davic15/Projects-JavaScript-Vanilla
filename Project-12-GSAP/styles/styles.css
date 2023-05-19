@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+:root {
+    font-size: 62.5%;
+    --body-fontsize: 1.6rem;
+    --secondary-fontsize: 7.6rem;
+    --work-font: 4.8rem;
+    --primary-font: 'Arimo', sans-serif;
+    --secondary-font: 'Cutive Mono', monospace;
+    --primary: #000;
+    --off-white: #f8f8f8;
+    --main-pink: #f50057;
+    --dark-pink: #ee7e79;
+    --light-pink: rgba(242, 215, 214, 0.87);
+    --main-teal: #4ecdc5;
+    --border-teal: rgba(31, 164, 164, 0.23);
+    --light-teal: rgba(34, 179, 179, 0.08);
+    --main-yellow: #ffd60b;
+    --pale-yellow: #fffaf0;
+}
+/* CSS reset */
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    box-sizing: border-box;
+    position: relative;
+    background: var(--off-white);
+    font-family: var(--primary-font);
+    font-size: var(--body-fontsize);
+}
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+h2 {
+    font-family: var(--secondary-font);
+    font-size: var(--secondary-fontsize);
+    font-weight: 500;
+    color: var(--primary);
+}
+@media (max-width: 56rem) {
+    h2 {
+        font-size: 5.6rem;
+    }
+}
+@media (max-width: 76rem) {
+    section {
+        padding: 1rem;
+    }
+}
+@media (min-width: 76rem) {
+    menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: end;
+        grid-gap: 50px;
+        margin: 2rem auto 4rem auto;
+        padding-bottom: 1rem;
+        height: 10vh;
+    }
+    .logo {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: var(--primary);
+        justify-self: start;
+        align-self: end;
+    }
+    nav {
+        align-self: end;
+    }
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    nav ul a {
+        color: var(--primary);
+        font-family: var(--secondary-font);
+        font-size: 3.6rem;
+        font-weight: 700;
+        border-bottom: 4px solid var(--border-teal);
+        border-width: 0px;
+        transition: 0.3s;
+    }
+    nav ul a:hover {
+        color: var(--main-teal);
+        border-width: 4px;
+    }
+}
+@media (max-width: 76rem) {
+    menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2;
+        grid-gap: 20px;
+        margin-top: 10px;
+    }
+    .logo {
+        font-size: 2.4rem;
+        font-weight: 700;
+        justify-self: start;
+        align-self: center;
+        color: var(--primary);
+        justify-self: start;
+        align-self: end;
+        transition: 0.3s;
+    }
+    .logo:hover {
+        color: var(--main-teal);
+        border-width: 4px;
+    }
+    nav {
+        padding: 10px;
+    }
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    nav ul a {
+        color: var(--primary);
+        font-family: var(--secondary-font);
+        font-size: 2.6rem;
+        font-weight: 700;
+        border-bottom: 4px solid var(--border-teal);
+        border-width: 0px;
+        transition: 0.3s;
+    }
+    nav ul a:hover {
+        color: var(--main-teal);
+        border-width: 4px;
+    }
+    nav ul a:last-of-type {
+        margin-right: 20px;
+    }
+}
+.hero {
+    display: grid;
+    grid-template-areas: 'title title name name' 'img img img subtitle' 'img img img subtitle';
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: 100px repeat(2, 25rem);
+    grid-gap: 20px;
+    background: var(--off-white);
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+}
+h1 {
+    grid-area: name;
+    justify-self: end;
+    align-self: start;
+    font-size: 10rem;
+    text-align: right;
+}
+.hero_secondary-title {
+    font-size: 5.2rem;
+    font-family: var(--secondary-font);
+    text-align: right;
+}
+.subtitle_container {
+    grid-area: subtitle;
+    justify-self: end;
+    align-self: center;
+}
+.hero_greeting {
+    grid-area: title;
+    justify-self: center;
+    font-size: 5.2rem;
+    font-family: var(--secondary-font);
+}
+.hero_svg {
+    grid-area: img;
+    max-width: 800px;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    grid-column: 0.25;
+}
+@media (max-width: 56rem) {
+    .hero {
+        display: grid;
+        grid-template-areas: 'title ' 'name' 'img ' 'img ' 'subtitle';
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-gap: 20px;
+        margin-bottom: 5rem;
+    }
+    h1 {
+        font-size: 6rem;
+        text-align: left;
+        justify-self: center;
+    }
+    .hero_secondary-title {
+        text-align: left;
+        font-size: 4.2rem;
+    }
+}
+.hero_circle,
+.hero_square,
+.hero_square-2 {
+    visibility: hidden;
+}
+.about {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 20rem);
+    grid-gap: 20px;
+    background-color: var(--main-pink);
+}
+.about h2 {
+    grid-column: 0.6666666667;
+    grid-row: 0.2;
+    max-width: 39.2rem;
+    padding: 2rem 1rem;
+    background: white;
+    justify-self: center;
+}
+.about svg {
+    grid-column: 0.6666666667;
+    grid-row: 0.6666666667;
+    max-width: 500px;
+    width: 100%;
+    justify-self: center;
+}
+.about p + p {
+    margin-top: 8px;
+}
+.paragraph {
+    margin: 1rem 2rem;
+    font-size: 1.6rem;
+    line-height: 2;
+    max-width: 200px;
+}
+.paragraph-1 {
+    grid-column: 0.3333333333;
+    grid-row: 2;
+    justify-self: center;
+}
+.paragraph-2 {
+    grid-column: 0.5;
+    grid-row: 2;
+    justify-self: center;
+}
+@media (max-width: 76rem) {
+    .about {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 20px;
+    }
+    .about h2 {
+        grid-column: 2;
+        grid-row: 0.2;
+        padding: 2rem 1rem;
+        margin: 1rem;
+    }
+    .about svg {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .paragraph-1 {
+        grid-column: 1;
+        grid-row: 0.75;
+    }
+    .paragraph-2 {
+        grid-column: 2;
+        grid-row: 0.75;
+    }
+}
+@media (max-width: 56rem) {
+    .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 4rem;
+    }
+    .paragraph {
+        max-width: 300px;
+    }
+    .paragraph:nth-of-type(1) {
+        margin-top: 2rem;
+    }
+}

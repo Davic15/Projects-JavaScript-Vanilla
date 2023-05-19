@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 200px;
+}
+
+.container {
+    margin: 1rem;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    background: #44bba4;
+    display: inline-block;
+}
+
+img {
+    width: 200px;
+}
+  
