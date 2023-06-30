@@ -153,7 +153,7 @@ header {
 }
 
 .logo {
-    max-width: 50px;
+    max-width: 40px;
 }
 
 .nav {
@@ -199,7 +199,7 @@ header {
     cursor: pointer;
     position: absolute;
     right: 1em;
-    top: 1em;
+    top: 2em;
     z-index: 1000;
 }
 
@@ -259,10 +259,16 @@ header {
     Carousel
     *********************************************************************
 */
+
+.carousel {
+    height: 100vh;
+    background: var(--clr-dark);
+}
+
 .slider {
     width: 100%;
     max-width: 100%;
-    height: 550px;
+    height: 800px;
     position: relative;
     overflow: hidden;
     border-radius: 15px;
@@ -272,7 +278,7 @@ header {
 .slide {
     width: 100%;
     max-width: 100%;
-    height: 550px;
+    height: 800px;
     position: absolute;
     transition: all 0.5s;
 }
@@ -287,19 +293,23 @@ header {
 
 .btn-slider {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     padding: 10px;
     border: none;
     border-radius: 50%;
     z-index: 10px;
     cursor: pointer;
     background-color: var(--clr-light);
-    font-size: var(--fs-body);
+    font-size: var(--fs-h3);
 }
 
 .btn-slider:active {
     transform: scale(1.1);
+}
+
+.btn-slider:hover {
+    background-color: var(--clr-accent);
 }
 
 .btn-prev {
@@ -324,6 +334,58 @@ header {
 .section__subtitle--intro {
     display: inline-block;
 }
+
+/* ********************************************************************************************************* */
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../assets/images/back.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+.header-container {
+    color: var(--clr-light);
+    padding: 15px;
+    width: 1024px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flicker {
+    background: linear-gradient(
+        to right,
+        var(--clr-light) 20%,
+        var(--clr-accent) 30%,
+        var(--clr-light) 70%,
+        var(--clr-dark) 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* ********************************************************************************************************* */
 
 /* 
     *********************************************************************
