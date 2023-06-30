@@ -19,7 +19,7 @@
     </head>
     <body>
         <!-- Header -->
-        <header>
+        <header id="header">
             <div class="logo">
                 <img src="./assets/icon/icon.jpg" alt="logo" />
             </div>
@@ -41,23 +41,13 @@
             </nav>
         </header>
 
-        <!-- Introduction -->
-        <!--<section class="intro" id="home">
-            <h1 class="section__title section__title--intro">
-                Hi, welcome to my <strong>Frontend Test</strong>
-            </h1>
-            <p class="section__subtitle section__subtitle--intro">
-                Applied - Innovation Makers
-            </p>
-        </section>-->
-
         <!-- New Landing Page -->
         <div class="background" id="home">
             <div class="header-container">
                 <h1 class="section__title section__title--intro flicker">
                     Applied
                 </h1>
-                <h2 class="section__title section__title--user flicker">
+                <h2 class="section__title section__title--intro flicker">
                     Innovation Makers
                 </h2>
             </div>
@@ -102,6 +92,34 @@
             <p class="section__subtitle section__subtitle--user">
                 with our experts
             </p>
+
+            <div>
+                <label for="search">Choose your expert:</label>
+                <select name="search" id="search">
+                    <optgroup label="Gender">
+                        <option value="all">All</option>
+                    </optgroup>
+                    <optgroup label="Gender">
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </optgroup>
+                    <optgroup label="Active / not Active">
+                        <option value="active">Active</option>
+                        <option value="not_active">Not Active</option>
+                    </optgroup>
+                    <optgroup label="Company">
+                        <option value="LAVAZZA">Lavazza</option>
+                        <option value="EURON">Euron</option>
+                        <option value="CANDECOR">Candecor</option>
+                        <option value="ORGANICA">Organica</option>
+                        <option value="VIRVA">Virva</option>
+                        <option value="ERIDANIA">Eridania</option>
+                        <option value="TERAPRENE">Teraprene</option>
+                        <option value="VELITY">Velity</option>
+                    </optgroup>
+                </select>
+            </div>
+
             <div class="container">
                 <ul class="cards" id="data"></ul>
             </div>
@@ -136,6 +154,7 @@
             </ul>
         </footer>
 
+        <a href="#header" class="top">Home &#8593;</a>
         <script src="./scripts/navigation.js"></script>
         <script src="./scripts/carousel.js"></script>
         <script type="module" src="./scripts/data.js"></script>
