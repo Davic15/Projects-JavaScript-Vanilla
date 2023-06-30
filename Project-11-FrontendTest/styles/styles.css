@@ -352,8 +352,8 @@ header {
 .header-container {
     color: var(--clr-light);
     padding: 15px;
-    width: 1024px;
-    font-size: 18px;
+    width: 800px;
+    font-size: var(--fs-h1);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -363,10 +363,10 @@ header {
 .flicker {
     background: linear-gradient(
         to right,
-        var(--clr-light) 20%,
+        var(--clr-dark) 20%,
         var(--clr-accent) 30%,
         var(--clr-light) 70%,
-        var(--clr-dark) 80%
+        var(--clr-accent) 80%
     );
     -webkit-background-clip: text;
     background-clip: text;
