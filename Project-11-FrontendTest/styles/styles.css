@@ -346,12 +346,20 @@ header {
 .header-container {
     color: var(--clr-light);
     padding: 15px;
-    width: 800px;
+    width: 1024px;
     font-size: var(--fs-h1);
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+}
+
+.header-container h1 {
+    font-size: 8rem;
+}
+
+.header-container h2 {
+    font-size: 6rem;
 }
 
 .flicker {
@@ -472,6 +480,18 @@ header {
     font-weight: 400;
 }
 
+.dropdown-menu {
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-body);
+}
+
+.select-menu {
+    width: 15%;
+    height: 5%;
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-body);
+}
+
 /* 
 *********************************************************************
     Floating Button (Scroll up)
@@ -564,5 +584,15 @@ header {
 @media (min-width: 56rem) {
     .cards_item {
         width: 33.333%;
+    }
+}
+
+@media (max-width: 800px) {
+    .header-container h1 {
+        font-size: 5rem;
+    }
+
+    .header-container h2 {
+        font-size: 3rem;
     }
 }
